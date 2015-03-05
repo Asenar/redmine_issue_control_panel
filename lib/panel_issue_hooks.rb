@@ -36,7 +36,7 @@ class PanelIssueHooks < Redmine::Hook::ViewListener
             end
             o << "</table>"
           end
-          assignables = project.assignable_users
+          assignables = issue.assignable_users
           if (!assignables.empty?) || (!issue.assigned_to.nil?)
             o << "<h3>#{l(:label_issue_change_assigned)}</h3>"
             o << '<div' + (assignables.length > 10 ? ' class="issue_control_panel_scroll">' : '>')
